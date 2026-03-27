@@ -731,17 +731,25 @@ hr { border: none; border-top: 1px solid var(--bd); margin: 14px 0; }
       <div class="sec-hdr"><div class="sec-title">Admin <span>& Giao diện</span></div></div>
 
       <!-- Firebase Config -->
-      <div class="adm-section">
-        <div class="adm-title">🔥 Cấu hình Firebase</div>
-        <div id="fb-connection-status"></div>
-        <div class="form-group">
-          <label class="form-label">Firebase Config JSON <span class="text-dim text-sm">(dán từ Firebase Console → Project Settings)</span></label>
-          <textarea class="form-textarea" id="fb-config-input" placeholder='{"apiKey":"AIzaSyCar80XfdwyS50tkxakA0WDuPE2KZNFK0o","authDomain":"project-246bfb34-a4be-403c-a2d.firebaseapp.com","projectId":"project-246bfb34-a4be-403c-a2d","storageBucket":"project-246bfb34-a4be-403c-a2d.firebasestorage.app","messagingSenderId":"744238439464","appId":"1:744238439464:web:8daa83d258ba0c06f6291d"}' style="min-height:110px;font-family:var(--fm);font-size:12px"></textarea>
-          <div class="form-hint">Sau khi lưu, tải lại trang để kết nối Firebase. Dữ liệu hiện tại sẽ được giữ nguyên.</div>
-        </div>
-        <button class="btn btn-primary" onclick="saveFirebaseConfig()">💾 Lưu cấu hình Firebase</button>
-        <button class="btn btn-secondary" style="margin-left:8px" onclick="testFirebaseConnection()">🔌 Kiểm tra kết nối</button>
-      </div>
+      <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyCar80XfdwyS50tkxakA0WDuPE2KZNFK0o",
+    authDomain: "project-246bfb34-a4be-403c-a2d.firebaseapp.com",
+    projectId: "project-246bfb34-a4be-403c-a2d",
+    storageBucket: "project-246bfb34-a4be-403c-a2d.firebasestorage.app",
+    messagingSenderId: "744238439464",
+    appId: "1:744238439464:web:8daa83d258ba0c06f6291d"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
 
       <!-- Logo -->
       <div class="adm-section">
